@@ -1,4 +1,4 @@
-package arrays;
+
 
 import java.util.Scanner;
 
@@ -17,6 +17,5 @@ public class Paula {
 			System.out.print(arr[j] * 100 +"% ");
 		}
 
-		
 	}
 }
