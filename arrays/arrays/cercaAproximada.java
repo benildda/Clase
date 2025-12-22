@@ -23,11 +23,7 @@ public class cercaAproximada {
 			int comparador = sc.nextInt();
 			for (int k=0; k<arr.length;k++) {
 				
-				if(arr[k] == comparador) {
-					System.out.println("SI");
-				}else if (arr[k] == comparador-1) {
-					System.out.println("SI");
-				}else if (arr[k] == comparador+1) {
+				if(arr[k] == comparador || arr[k] == comparador-1 || arr[k] == comparador+1) {
 					System.out.println("SI");
 				}else {
 					System.out.println("NO");
