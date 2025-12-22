@@ -1,8 +1,8 @@
-package arrays;
+
 
 import java.util.Scanner;
 
-public class Macarrades {
+public class Paula {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
