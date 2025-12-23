@@ -20,17 +20,17 @@ public class cercaAproximada {
 			}
 
 			int comparador = sc.nextInt();
-			int mayorValor = arr[0];
+			int comparadorInferior = comparador - 1;
+			int comparadorSuperior = comparador + 1;
+			boolean respuesta = false;
 
 			for (int k = 0; k < arr.length; k++) {
-				if (arr[k]> mayorValor) {
 
-					mayorValor = arr[k];
-				}System.out.println(mayorValor);
+				if (arr[k] == comparador || arr[k] == comparadorInferior || arr[k] == comparadorSuperior) {
+					respuesta = true;
+				}
 			}
-			
-			
-			if (mayorValor == comparador || mayorValor == comparador - 1 || mayorValor == comparador + 1) {
+			if (respuesta) {
 				System.out.println("SI");
 			} else {
 				System.out.println("NO");
@@ -40,5 +40,4 @@ public class cercaAproximada {
 		}
 
 	}
-
 }
