@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner;
 
 public class cercaAproximada {
@@ -21,19 +20,25 @@ public class cercaAproximada {
 			}
 
 			int comparador = sc.nextInt();
-			
-			for (int k=0; k<arr.length;k++) {
-				arr[k] = sc.nextInt();
-				
-				if(arr[k] == comparador || arr[k] == comparador-1 || arr[k] == comparador+1) {
-					
-				}else {
-					System.out.println("NO");
-				}
-				
+			int mayorValor = arr[0];
+
+			for (int k = 0; k < arr.length; k++) {
+				if (arr[k]> mayorValor) {
+
+					mayorValor = arr[k];
+				}System.out.println(mayorValor);
 			}
 			
+			
+			if (mayorValor == comparador || mayorValor == comparador - 1 || mayorValor == comparador + 1) {
+				System.out.println("SI");
+			} else {
+				System.out.println("NO");
+
+			}
+
 		}
+
 	}
 
 }
