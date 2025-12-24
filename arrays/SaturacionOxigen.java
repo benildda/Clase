@@ -20,20 +20,24 @@ public class SaturacionOxigen {
 				arr[j]=sc.nextInt();
 			}
 			
-			String millora = "";
-			String estable = "";
+			boolean respuesta = false;
 			
 			for (int k=0;k<arr.length -2;k++) {
 				
-				if(arr[k+1] == arr[k]+1 && arr[k+2] == arr[k]+2) {
-					millora = "MILLORA";
-				} else if(arr[k+1] == arr[k] && arr[k] == arr[k+2]) {
-					estable ="ESTABLE";
+				if(arr[k] < arr[k+1] && arr[k+1] < arr[k+2]) {
+					respuesta = true;
+			
 				}
 				
 				
-			}System.out.println(millora);
-			System.out.println(estable);
+			}
+
+			if (respuesta) {
+				System.out.println("MILLORA");
+			} else {
+				System.out.println("ESTABLE");
+			}
+			
 			
 			
 			
