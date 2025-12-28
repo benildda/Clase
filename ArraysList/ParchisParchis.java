@@ -25,6 +25,7 @@ public class ParchisParchis {
 
            
             for (int t = 1; t <= 3; t++) {
+            	
                 int tiradas = partida.get(t);
 
                 if (!ganado) {
