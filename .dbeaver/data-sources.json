@@ -18,24 +18,6 @@
 				},
 				"auth-model": "native"
 			}
-		},
-		"mariaDB-19b66399031-51d4f62ed51c38d1": {
-			"provider": "mysql",
-			"driver": "mariaDB",
-			"name": "162.19.137.5 2",
-			"save-password": true,
-			"configuration": {
-				"host": "162.19.137.5",
-				"port": "3306",
-				"url": "jdbc:mariadb://162.19.137.5:3306/",
-				"configurationType": "MANUAL",
-				"type": "dev",
-				"closeIdleConnection": true,
-				"provider-properties": {
-					"@dbeaver-show-all-dbs@": "true"
-				},
-				"auth-model": "native"
-			}
 		}
 	},
 	"connection-types": {
