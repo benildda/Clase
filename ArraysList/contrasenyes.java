@@ -13,6 +13,7 @@ public class contrasenyes {
 		int entradas = sc.nextInt();
 		ArrayList<String> regUsuaris = new ArrayList<>();
 		ArrayList<String> regContrasenyes = new ArrayList<>();
+		
 		for (int i = 0; i < entradas; i++) {
 
 			regUsuaris.add(sc.next());
