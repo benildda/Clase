@@ -1,11 +1,12 @@
 package ArraysList;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Frequencia {
 
-	public static void main(String[] args) {
+	public static void main(String[] args, Object collections) {
 		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
@@ -19,23 +20,26 @@ public class Frequencia {
 			
 			ArrayList<Integer> frecuencias = new ArrayList<Integer>(longitud);
 			
-			 for (int j = 0; j < longitud;)
+			 for (int j = 0; j < longitud; j++) {
+				 
+				 frecuencias.add(sc.nextInt());
+				 
+			 }
 			
+			 
+			int cero = Collections.frequency(frecuencias,0);
+			int uno = Collections.frequency(frecuencias,1);
+			int dos = Collections.frequency(frecuencias,2);
+			int tres = Collections.frequency(frecuencias,3);
+			int cuatro = Collections.frequency(frecuencias,4);
+			int cinco = Collections.frequency(frecuencias,5);
+			int seis = Collections.frequency(frecuencias,6);
+			int siete = Collections.frequency(frecuencias,7);
+			int ocho = Collections.frequency(frecuencias,8);
+			int nueve = Collections.frequency(frecuencias,9);
+			int diez = Collections.frequency(frecuencias,10);
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			System.out.print(cero+" "+ uno+" "+dos+" "+tres+" "+cuatro+" "+cinco+" "+seis+" "+siete+" "+ocho+" "+nueve+" "+diez);
 		}
 	}
 
