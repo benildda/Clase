@@ -23,19 +23,21 @@ public class Repetits {
 				anecsColeccionats.add(sc.nextInt());
 			}
 
+			boolean hayRepetidos = false;
+
 			for (int j = 0; j < anecsColeccionats.size(); j++) {
+			    int valor = anecsColeccionats.get(j);
 
-				int comprobaciones = Collections.frequency(anecsColeccionats, j);
-
-				if (comprobaciones == 1) {
-					System.out.println("SI");
-				} else {
-					System.out.println("NO");
-
-				}
-
+			    if (Collections.frequency(anecsColeccionats, valor) > 1) {
+			        hayRepetidos = true;
+			    }
 			}
 
+			if (hayRepetidos) {
+			    System.out.println("SI");
+			} else {
+			    System.out.println("NO");
+			}
 		}
 	}
 }
