@@ -1,6 +1,7 @@
 package ArraysList;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class totsmoltaladreta {
@@ -25,14 +26,22 @@ public class totsmoltaladreta {
 				
 			}
 			
+			int desplazamiento = sc.nextInt();
 			
-			
-			
-			
-			
-			
-			
-			
+		
+				
+				Collections.rotate(derecha, desplazamiento);
+				
+				
+				for (int j = 0; j < derecha.size(); j++) {
+					
+	                System.out.print(derecha.get(j));
+	                
+	                if (j < derecha.size() - 1) System.out.print(" ");
+	            }
+				
+	            System.out.println();
+				
 			
 		}
 	}
