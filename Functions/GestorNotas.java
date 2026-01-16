@@ -22,7 +22,7 @@ public class GestorNotas {
 
 			System.out.println(alumnes);
 			System.out.println("1. Registre l'alumne i la seva nota");
-			System.out.println("2. Visualitza total Donuts");
+			System.out.println("2. Mitjana de totes les notes");
 			System.out.println("3. Total de vendes al dia");
 			System.out.println("4. Mostra la mitjana de vendes");
 			System.out.println("5. Mostra les vendes per dotzena");
@@ -40,10 +40,11 @@ public class GestorNotas {
 			break;
 			
 		case 2:
-			
+			mitjanaNotes();
 			break;
 			
 		case 3:
+			
 			break;
 		case 4:
 			break;
@@ -60,6 +61,13 @@ public class GestorNotas {
 		
 		
 		}
+	}
+
+
+
+	private static void mitjanaNotes() {
+		// TODO Auto-generated method stub
+		
 	}
 
 
