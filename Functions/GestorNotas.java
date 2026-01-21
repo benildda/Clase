@@ -14,74 +14,199 @@ public class GestorNotas {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int opcio = sc.nextInt();
-		System.out.println("Introdueix les teves dades");
+		
+		System.out.println("GESTOR DE NOTES");
+		System.out.println();
+		System.out.println();
 		
 		boolean sortir = false;
 		while (!sortir) {
 
-			System.out.println(alumnes);
+			System.out.println("----------------------------------");
+			System.out.println("----------------------------------");
+	
+			System.out.println("ESCULL OPCIO:");
+			System.out.println("----------------------------------");
+			System.out.println();
+			System.out.println();
 			System.out.println("1. Registre l'alumne i la seva nota");
 			System.out.println("2. Mitjana de totes les notes");
-			System.out.println("3. Total de vendes al dia");
-			System.out.println("4. Mostra la mitjana de vendes");
-			System.out.println("5. Mostra les vendes per dotzena");
-			System.out.println("6. Vols esborrar totes les vendes?");
-			System.out.println("7· Surt del programa");
-			System.out.println("-----------");
-			System.out.println("ESCULL OPCIO:");
-		}
+			System.out.println("3. Mostrar aprobats");
+			System.out.println("4. Mostra la mitjana de totes les notes");
+			System.out.println("5. EScull l'alumne per veure la seva nota");
+			System.out.println("6. Introduir nova nota de l'alumne");
+			System.out.println("7· Total d'alumnes; el % aprovats, Nota + Alta, Nota +Baixa");
+			System.out.println("8. Sortir del programa");
+			System.out.println();
+			System.out.println();
+			System.out.println("----------------------------------");
+			System.out.print("Alumnes: ");
+			System.out.println(alumnes);
+			System.out.print("Notes : ");
+			System.out.println(notes);
+			
+			System.out.println("----------------------------------");
+
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			System.out.println("Opció: ");
+			System.out.println("----------------------------------");
+
+			
+		int opcio = sc.nextInt();
 		
 		switch(opcio) {
 		
 		case 1:
-			alumne();
-			nota();
+		
+
+			nomYnota();
+			
 			break;
 			
 		case 2:
-			mitjanaNotes();
+			// Mostrarà la mitjana de totes les notes introduïdes
+			// Si no hi ha notes, mostrarà un missatge d'error
+
+			mitjanaTotesNotes();
+			
 			break;
 			
 		case 3:
+			// Mostrarà el nom i la nota de tots els alumnes amb nota ≥5
+			// Si no hi ha aprovats, mostrarà un missatge adequat
+
+			motraAprobats();
 			
 			break;
 		case 4:
+			// Mostrarà la mitjana de totes les notes introduïdes
+			// Si no hi ha notes, mostrarà un missatge d'error
+
+			
+			mitjanaNotes();
 			break;
 		case 5:
+			// Demanarà un nom i mostrarà la seva nota
+			// Si l'alumne no existeix, mostrarà un missatge d'error
+			
+			mostrarLaNotaDunAlumne();
+
 			break;
 		case 6:
+			// Demanarà un nom i la nova nota
+			// Si l'alumne no existeix, mostrarà un missatge d'error
+			// La nova nota ha de ser un valor entre 0 i 10
+			
+			inserirNovaNota();
+			
 			break;
 		case 7:
+			// Número total d'alumnes
+			// Percentatge d'aprovats
+			// Nota més alta i més baixa
+			
+			estadistiques();
+			
 			break;
 		case 8:
+			// Sortir del programa:
+			
+			out();
+
 			break;
-		
-		
-		
-		
+
 		}
 	}
+
+	}
+
+	private static void motraAprobats() {
+		// TODO Auto-generated method stub
+		int indice = 0;
+		for(int i =0;i< alumnes.size();i++) {
+			if(notes.get(i)>=5) {
+				
+				indice = i;
+				System.out.println(alumnes.get(indice));
+				System.out.println(notes.get(indice));
+			
+				
+			}
+		}
+	}
+
+	private static void out() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private static void estadistiques() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private static void inserirNovaNota() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private static void mostrarLaNotaDunAlumne() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private static void mitjanaTotesNotes() {
+		// TODO Auto-generated method stub
+		int total = 0;
+		double calculMitjana = 0;
+		
+		for(int i=0;i<notes.size(); i++) {
+			
+			total = total + notes.get(i);
+			
+		}
+	calculMitjana = total / notes.size();
+		 
+				System.out.println("Mitjana: "+calculMitjana);
+	}
+
+
+
+
+
+	private static void nomYnota() {
+		// TODO Auto-generated method stub
+		// Demanarà el nom de l'alumne i la seva nota
+		// La nota ha de ser un valor enter entre 0 i 10
+		// No es poden introduir alumnes amb el mateix nom
+		System.out.println("Introduex el nom:");
+		alumnes.add(sc.next());
+		
+		System.out.println("Introdueix la nota:");
+		notes.add(sc.nextInt());
+
+		}
+		
+		
+
 
 
 
 	private static void mitjanaNotes() {
 		// TODO Auto-generated method stub
-		
-	}
 
-
-
-	private static void nota() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	private static void alumne() {
-		// TODO Auto-generated method stub
-		
+	
 	}
 
 }
