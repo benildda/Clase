@@ -141,6 +141,7 @@ public class GestorNotas {
 		notes.add(sc.nextInt());
 
 		}
+	
 	// 2
 	private static void mitjanaTotesNotes() {
 		// Mostrarà la mitjana de totes les notes introduïdes
@@ -157,6 +158,7 @@ public class GestorNotas {
 		 
 				System.out.println("Mitjana: "+calculMitjana);
 	}
+	
 	// 3
 	private static void motraAprobats() {
 		
