@@ -1,6 +1,7 @@
 package Functions;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class GestorNotas {
@@ -8,23 +9,20 @@ public class GestorNotas {
 	static ArrayList<Integer> notes = new ArrayList<>();
 	static ArrayList<String> alumnes = new ArrayList<>();
 	static Scanner sc = new Scanner(System.in);
-	
-	
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		
 		System.out.println("GESTOR DE NOTES");
 		System.out.println();
 		System.out.println();
-		
+
 		boolean sortir = false;
 		while (!sortir) {
 
 			System.out.println("----------------------------------");
 			System.out.println("----------------------------------");
-	
+
 			System.out.println("ESCULL OPCIO:");
 			System.out.println("----------------------------------");
 			System.out.println();
@@ -44,7 +42,7 @@ public class GestorNotas {
 			System.out.println(alumnes);
 			System.out.print("Notes : ");
 			System.out.println(notes);
-			
+
 			System.out.println("----------------------------------");
 
 			System.out.println();
@@ -54,130 +52,124 @@ public class GestorNotas {
 			System.out.println("Opció: ");
 			System.out.println("----------------------------------");
 
-			
-		int opcio = sc.nextInt();
-		
-		switch(opcio) {
-		
-		case 1:
-		
+			int opcio = sc.nextInt();
 
-			nomYnota();
-			
-			break;
-			
-		case 2:
-			// Mostrarà la mitjana de totes les notes introduïdes
-			// Si no hi ha notes, mostrarà un missatge d'error
+			switch (opcio) {
 
-			mitjanaTotesNotes();
-			
-			break;
-			
-		case 3:
-			// Mostrarà el nom i la nota de tots els alumnes amb nota ≥5
-			// Si no hi ha aprovats, mostrarà un missatge adequat
+			case 1:
 
-			motraAprobats();
-			
-			break;
-		case 4:
-			// Mostrarà el nom i la nota de tots els alumnes amb nota <5
-			// Si no hi ha suspesos, mostrarà un missatge adequat
+				nomYnota();
 
+				break;
 
-			
-			suspesos();
-			
-			break;
-		case 5:
-			// Demanarà un nom i mostrarà la seva nota
-			// Si l'alumne no existeix, mostrarà un missatge d'error
-			
-			mostrarLaNotaDunAlumne();
+			case 2:
+				// Mostrarà la mitjana de totes les notes introduïdes
+				// Si no hi ha notes, mostrarà un missatge d'error
 
-			break;
-		case 6:
-			// Demanarà un nom i la nova nota
-			// Si l'alumne no existeix, mostrarà un missatge d'error
-			// La nova nota ha de ser un valor entre 0 i 10
-			
-			modificarNota();
-			
-			break;
-		case 7:
-			// Número total d'alumnes
-			// Percentatge d'aprovats
-			// Nota més alta i més baixa
-			
-			estadistiques();
-			
-			break;
-		case 8:
-			// Sortir del programa:
-			
-			out();
+				mitjanaTotesNotes();
 
-			break;
+				break;
 
+			case 3:
+				// Mostrarà el nom i la nota de tots els alumnes amb nota ≥5
+				// Si no hi ha aprovats, mostrarà un missatge adequat
+
+				motraAprobats();
+
+				break;
+			case 4:
+				// Mostrarà el nom i la nota de tots els alumnes amb nota <5
+				// Si no hi ha suspesos, mostrarà un missatge adequat
+
+				suspesos();
+
+				break;
+			case 5:
+				// Demanarà un nom i mostrarà la seva nota
+				// Si l'alumne no existeix, mostrarà un missatge d'error
+
+				mostrarLaNotaDunAlumne();
+
+				break;
+			case 6:
+				// Demanarà un nom i la nova nota
+				// Si l'alumne no existeix, mostrarà un missatge d'error
+				// La nova nota ha de ser un valor entre 0 i 10
+
+				modificarNota();
+
+				break;
+			case 7:
+				// Número total d'alumnes
+				// Percentatge d'aprovats
+				// Nota més alta i més baixa
+
+				estadistiques();
+
+				break;
+			case 8:
+				// Sortir del programa:
+
+				sortir = true;
+			
+
+				break;
+
+			}
 		}
-	}
 
 	}
-
-
 
 	// 1
 	private static void nomYnota() {
-		
+
 		// Demanarà el nom de l'alumne i la seva nota
 		// La nota ha de ser un valor enter entre 0 i 10
 		// No es poden introduir alumnes amb el mateix nom
-		
+
 		System.out.println("Introduex el nom:");
 		alumnes.add(sc.next());
-		
+
 		System.out.println("Introdueix la nota:");
 		notes.add(sc.nextInt());
 
-		}
-	
+	}
+
 	// 2
 	private static void mitjanaTotesNotes() {
 		// Mostrarà la mitjana de totes les notes introduïdes
 		// Si no hi ha notes, mostrarà un missatge d'error
 		int total = 0;
 		double calculMitjana = 0;
-		
-		for(int i=0;i<notes.size(); i++) {
-			
-			total = total + notes.get(i);
-			
-		}
-	calculMitjana = total / notes.size();
-		 if(calculMitjana > 0){
-			 System.out.println("Mitjana: "+calculMitjana);
-		 } else {
-				System.out.println("¡¡¡NO HI HAN NOTES INTRODUÏDES!!!");
 
-		 }
-				
+		for (int i = 0; i < notes.size(); i++) {
+
+			total = total + notes.get(i);
+
+		}
+		calculMitjana = total / notes.size();
+		if (calculMitjana > 0) {
+			System.out.println("Mitjana: " + calculMitjana);
+		} else {
+			System.out.println("¡¡¡NO HI HAN NOTES INTRODUÏDES!!!");
+
+		}
+
 	}
-	
+
 	// 3
 	private static void motraAprobats() {
-		
+
 		// Mostrarà el nom i la nota de tots els alumnes amb nota ≥5
 		// Si no hi ha aprovats, mostrarà un missatge adequat
-		
-		
+
 		int indice = 0;
-		for(int i =0;i< alumnes.size();i++) {
-			if(notes.get(i)>=5) {
-				
+		for (int i = 0; i < alumnes.size(); i++) {
+			if (notes.get(i) >= 5) {
+
 				indice = i;
-				System.out.println("ALUMNE APROBAT: "+alumnes.get(indice) + "    NOTA: "+notes.get(indice));
-			} else if (notes.get(indice)<5){
+				System.out.println("ALUMNE APROBAT: " + alumnes.get(indice) + "    NOTA: " + notes.get(indice));
+			} else if (notes.get(indice) < 5) {
 				System.out.println("¡¡¡ALGO PASA...NINGÚ HA APROBAT!!!");
 
 			}
@@ -190,64 +182,92 @@ public class GestorNotas {
 		// Mostrarà el nom i la nota de tots els alumnes amb nota <5
 		// Si no hi ha suspesos, mostrarà un missatge adequat
 		int indice = 0;
-		for(int i =0;i< alumnes.size();i++) {
-			if(notes.get(i)<5) {
-				
+		for (int i = 0; i < alumnes.size(); i++) {
+			if (notes.get(i) < 5) {
+
 				indice = i;
-				System.out.println("ALUMNE SUSPES "+ alumnes.get(indice)+ "    NOTA: "+notes.get(indice));
+				System.out.println("ALUMNE SUSPES " + alumnes.get(indice) + "    NOTA: " + notes.get(indice));
 			} else {
 				System.out.println("¡¡¡¡NO HI HAN SUSPESOS!!!");
 
 			}
-		
+
 		}
-		
+
 	}
-	
+
 	// 5
 	private static void mostrarLaNotaDunAlumne() {
 		// Demanarà un nom i mostrarà la seva nota
 		// Si l'alumne no existeix, mostrarà un missatge d'error
+		System.out.println("Introdueix el nom de l'alumne:  ");
 
 		String introAlumne = sc.next();
-		
-		for(int i=0;i<alumnes.size();i++) {
-			System.out.println("Introdueix el nom de l'alumne:  ");
-			if(alumnes.get(i) == introAlumne) {
-				System.out.println("NOTA:  "+notes.get(i));
-			} else {
-				System.out.println("¡¡¡ALUMNE INEXISTENT!!!");
+		int valor = 0;
+
+		for (int i = 0; i < alumnes.size(); i++) {
+
+			if (alumnes.get(i).equals(introAlumne)) {
+				valor++;
+
+				System.out.println("NOTA:  " + notes.get(i));
 			}
+
 		}
-		
+		if (valor == 0) {
+			System.out.println("¡¡¡ALUMNE INEXISTENT!!!");
+		}
+
 	}
-	
+
 	// 6
 	private static void modificarNota() {
 		// Demanarà un nom i la nova nota
 		// Si l'alumne no existeix, mostrarà un missatge d'error
 		// La nova nota ha de ser un valor entre 0 i 10
 
+		System.out.println("Introdueix el nom de l'alumne: ");
+		String alumne = sc.next();
 		
+		int valor = 0;
+		
+		for (int i = 0; i < alumnes.size(); i++) {
+			
+			if (alumnes.get(i).equals(alumne)) {
+				
+				System.out.println("Introdueix la nova nota :  ");
+				notes.set(i, sc.nextInt());
+			} 
+		}
+		if (valor == 0) {
+			System.out.println("¡¡¡ALUMNE INEXISTENT!!!");
+		}
+
 		
 	}
-	
+
 	// 7
 	private static void estadistiques() {
-		
-			// Número total d'alumnes
-			// Percentatge d'aprovats
-			// Nota més alta i més baixa
 
-	}
-
-	// 8
-	private static void out() {
-		// Sortir
+		// Número total d'alumnes
+		// Percentatge d'aprovats
+		// Nota més alta i més baixa
 		
-	}
+		System.out.println("Total Alumnes :"+ alumnes.size());
+		
+		int valor = 0;
+
+		for (int i = 0; i < notes.size(); i++) {
+
+			if (notes.get(i) >= 5) {
+				valor++;
+				}
+		}System.out.println("Percentatge d'aprobats :"+ valor*100/notes.size()+"%");
+	
+		
+			System.out.println("Nota mes alta: "+ Collections.max(notes));
+			System.out.println("Nota mes baixa: "+Collections.min(notes));
+		}
+
 
 }
-
-
-		
