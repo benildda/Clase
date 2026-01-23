@@ -155,8 +155,13 @@ public class GestorNotas {
 			
 		}
 	calculMitjana = total / notes.size();
-		 
-				System.out.println("Mitjana: "+calculMitjana);
+		 if(calculMitjana > 0){
+			 System.out.println("Mitjana: "+calculMitjana);
+		 } else {
+				System.out.println("¡¡¡NO HI HAN NOTES INTRODUÏDES!!!");
+
+		 }
+				
 	}
 	
 	// 3
@@ -171,10 +176,10 @@ public class GestorNotas {
 			if(notes.get(i)>=5) {
 				
 				indice = i;
-				System.out.println(alumnes.get(indice));
-				System.out.println(notes.get(indice));
-			
-				
+				System.out.println("ALUMNE APROBAT: "+alumnes.get(indice) + "    NOTA: "+notes.get(indice));
+			} else if (notes.get(indice)<5){
+				System.out.println("¡¡¡ALGO PASA...NINGÚ HA APROBAT!!!");
+
 			}
 		}
 	}
@@ -184,9 +189,18 @@ public class GestorNotas {
 
 		// Mostrarà el nom i la nota de tots els alumnes amb nota <5
 		// Si no hi ha suspesos, mostrarà un missatge adequat
+		int indice = 0;
+		for(int i =0;i< alumnes.size();i++) {
+			if(notes.get(i)<5) {
+				
+				indice = i;
+				System.out.println("ALUMNE SUSPES "+ alumnes.get(indice)+ "    NOTA: "+notes.get(indice));
+			} else {
+				System.out.println("¡¡¡¡NO HI HAN SUSPESOS!!!");
 
+			}
 		
-		
+		}
 		
 	}
 	
@@ -195,6 +209,16 @@ public class GestorNotas {
 		// Demanarà un nom i mostrarà la seva nota
 		// Si l'alumne no existeix, mostrarà un missatge d'error
 
+		String introAlumne = sc.next();
+		
+		for(int i=0;i<alumnes.size();i++) {
+			System.out.println("Introdueix el nom de l'alumne:  ");
+			if(alumnes.get(i) == introAlumne) {
+				System.out.println("NOTA:  "+notes.get(i));
+			} else {
+				System.out.println("¡¡¡ALUMNE INEXISTENT!!!");
+			}
+		}
 		
 	}
 	
