@@ -32,7 +32,7 @@ public class GestorNotas {
 			System.out.println("1. Registre l'alumne i la seva nota");
 			System.out.println("2. Mitjana de totes les notes");
 			System.out.println("3. Mostrar aprobats");
-			System.out.println("4. Mostra la mitjana de totes les notes");
+			System.out.println("4. Mostrar suspesos");
 			System.out.println("5. EScull l'alumne per veure la seva nota");
 			System.out.println("6. Introduir nova nota de l'alumne");
 			System.out.println("7· Total d'alumnes; el % aprovats, Nota + Alta, Nota +Baixa");
@@ -82,11 +82,13 @@ public class GestorNotas {
 			
 			break;
 		case 4:
-			// Mostrarà la mitjana de totes les notes introduïdes
-			// Si no hi ha notes, mostrarà un missatge d'error
+			// Mostrarà el nom i la nota de tots els alumnes amb nota <5
+			// Si no hi ha suspesos, mostrarà un missatge adequat
+
 
 			
-			mitjanaNotes();
+			suspesos();
+			
 			break;
 		case 5:
 			// Demanarà un nom i mostrarà la seva nota
@@ -100,7 +102,7 @@ public class GestorNotas {
 			// Si l'alumne no existeix, mostrarà un missatge d'error
 			// La nova nota ha de ser un valor entre 0 i 10
 			
-			inserirNovaNota();
+			modificarNota();
 			
 			break;
 		case 7:
@@ -123,8 +125,45 @@ public class GestorNotas {
 
 	}
 
+
+
+	// 1
+	private static void nomYnota() {
+		
+		// Demanarà el nom de l'alumne i la seva nota
+		// La nota ha de ser un valor enter entre 0 i 10
+		// No es poden introduir alumnes amb el mateix nom
+		
+		System.out.println("Introduex el nom:");
+		alumnes.add(sc.next());
+		
+		System.out.println("Introdueix la nota:");
+		notes.add(sc.nextInt());
+
+		}
+	// 2
+	private static void mitjanaTotesNotes() {
+		// Mostrarà la mitjana de totes les notes introduïdes
+		// Si no hi ha notes, mostrarà un missatge d'error
+		int total = 0;
+		double calculMitjana = 0;
+		
+		for(int i=0;i<notes.size(); i++) {
+			
+			total = total + notes.get(i);
+			
+		}
+	calculMitjana = total / notes.size();
+		 
+				System.out.println("Mitjana: "+calculMitjana);
+	}
+	// 3
 	private static void motraAprobats() {
-		// TODO Auto-generated method stub
+		
+		// Mostrarà el nom i la nota de tots els alumnes amb nota ≥5
+		// Si no hi ha aprovats, mostrarà un missatge adequat
+		
+		
 		int indice = 0;
 		for(int i =0;i< alumnes.size();i++) {
 			if(notes.get(i)>=5) {
@@ -138,75 +177,51 @@ public class GestorNotas {
 		}
 	}
 
-	private static void out() {
-		// TODO Auto-generated method stub
+	// 4
+	private static void suspesos() {
+
+		// Mostrarà el nom i la nota de tots els alumnes amb nota <5
+		// Si no hi ha suspesos, mostrarà un missatge adequat
+
+		
+		
 		
 	}
-
-
-
-	private static void estadistiques() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	private static void inserirNovaNota() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	private static void mostrarLaNotaDunAlumne() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	private static void mitjanaTotesNotes() {
-		// TODO Auto-generated method stub
-		int total = 0;
-		double calculMitjana = 0;
-		
-		for(int i=0;i<notes.size(); i++) {
-			
-			total = total + notes.get(i);
-			
-		}
-	calculMitjana = total / notes.size();
-		 
-				System.out.println("Mitjana: "+calculMitjana);
-	}
-
-
-
-
-
-	private static void nomYnota() {
-		// TODO Auto-generated method stub
-		// Demanarà el nom de l'alumne i la seva nota
-		// La nota ha de ser un valor enter entre 0 i 10
-		// No es poden introduir alumnes amb el mateix nom
-		System.out.println("Introduex el nom:");
-		alumnes.add(sc.next());
-		
-		System.out.println("Introdueix la nota:");
-		notes.add(sc.nextInt());
-
-		}
-		
-		
-
-
-
-
-	private static void mitjanaNotes() {
-		// TODO Auto-generated method stub
-
 	
+	// 5
+	private static void mostrarLaNotaDunAlumne() {
+		// Demanarà un nom i mostrarà la seva nota
+		// Si l'alumne no existeix, mostrarà un missatge d'error
+
+		
+	}
+	
+	// 6
+	private static void modificarNota() {
+		// Demanarà un nom i la nova nota
+		// Si l'alumne no existeix, mostrarà un missatge d'error
+		// La nova nota ha de ser un valor entre 0 i 10
+
+		
+		
+	}
+	
+	// 7
+	private static void estadistiques() {
+		
+			// Número total d'alumnes
+			// Percentatge d'aprovats
+			// Nota més alta i més baixa
+
+	}
+
+	// 8
+	private static void out() {
+		// Sortir
+		
 	}
 
 }
+
+
+		
