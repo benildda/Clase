@@ -8,17 +8,35 @@
 			"save-password": true,
 			"show-system-objects": true,
 			"configuration": {
-				"database": "/Users/monserrat/Desktop/Code/.metadata/sample-database-sqlite-1/Chinook.db",
-				"url": "jdbc:sqlite:/Users/monserrat/Desktop/Code/.metadata/sample-database-sqlite-1/Chinook.db",
+				"database": "/Users/montserrat/Desktop/Code/.metadata/sample-database-sqlite-1/Chinook.db",
+				"url": "jdbc:sqlite:/Users/montserrat/Desktop/Code/.metadata/sample-database-sqlite-1/Chinook.db",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true
 			}
 		},
-		"mariaDB-19bf027fb3f-23e5e23a35dc4404": {
+		"mariaDB-19bea9991b1-1acd46e0c2b8d878": {
 			"provider": "mysql",
 			"driver": "mariaDB",
 			"name": "162.19.137.5",
+			"save-password": true,
+			"configuration": {
+				"host": "162.19.137.5",
+				"port": "3306",
+				"url": "jdbc:mariadb://162.19.137.5:3306/",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-show-all-dbs@": "true"
+				},
+				"auth-model": "native"
+			}
+		},
+		"mariaDB-19bea9f0899-35acf571d89542ee": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "162.19.137.5 2",
 			"save-password": true,
 			"configuration": {
 				"host": "162.19.137.5",

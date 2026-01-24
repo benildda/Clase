@@ -8,8 +8,8 @@
 			"save-password": true,
 			"show-system-objects": true,
 			"configuration": {
-				"database": "/Users/monserrat/Desktop/Code/.metadata/sample-database-sqlite-1/Chinook.db",
-				"url": "jdbc:sqlite:/Users/monserrat/Desktop/Code/.metadata/sample-database-sqlite-1/Chinook.db",
+				"database": "/Users/montserrat/Desktop/Code/.metadata/sample-database-sqlite-1/Chinook.db",
+				"url": "jdbc:sqlite:/Users/montserrat/Desktop/Code/.metadata/sample-database-sqlite-1/Chinook.db",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true
