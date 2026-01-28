@@ -1,9 +1,9 @@
 package Inventari;
 
-import java.util.ArrayList;
-
 public class producte {
 
-	ArrayList <String> productes = new ArrayList<>();
-	
+public int codi;
+public String nom;
+public double preu;
+public int stock;
 }
