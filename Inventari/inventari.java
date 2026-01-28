@@ -100,7 +100,12 @@ public class inventari {
 				break;
 				
 			case 3:
+				System.out.println("Introdueix el codi del producte a modificar: ");
+				int c = sc.nextInt();
 				
+				for(int i=0; i<Producte.productes.size();i++) {
+					
+				}
 				break;
 				
 			case 4:
