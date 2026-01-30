@@ -30,7 +30,7 @@ public class inventari {
 				break;
 
 			case 3:
-
+				informes();
 				break;
 
 			case 4:
@@ -40,6 +40,75 @@ public class inventari {
 
 		}
 
+	}
+
+	private static void informes() {
+		// TODO Auto-generated method stub
+		boolean sortir = false;
+		 while(!sortir) {
+			 
+			 System.out.println("1. Mostra els productes sota minims: ");
+			 System.out.println("2. Mostra el total de vendes: ");
+			 System.out.println("3. Mostrar el producte més venut: ");
+			 System.out.println("4. Sortir al menu principal: ");
+			 
+			 
+			 int opcio = sc.nextInt();
+			 switch (opcio) {
+			 case 1:
+				 
+				 for(int i=0;i<Producte.productes.size();i++) {
+					 if(Producte.productes.get(i).stock <5) {
+						 System.out.println("--------------------------------------------");
+						 System.out.println("Producte sota minim: "+Producte.productes.get(i).nom);
+						 System.out.println("Quantitat: "+Producte.productes.get(i).stock);
+						 System.out.println("--------------------------------------------");
+					 }
+					 
+				 }
+				 
+				 break;
+				 
+			 case 2:
+				 int totalFacturat =0;
+				 int totalProductesVenuts =0;
+				 for(int i=0;i<Comandes.comandades.size();i++) {
+					 totalFacturat += Comandes.comandades.get(i).quantitat*Producte.productes.get(i).preu;
+					 totalProductesVenuts += Comandes.comandades.get(i).quantitat;
+				 }
+				 System.out.println("---------------------------------------");
+				 System.out.println("Total facturat en totes les comandes: "+totalFacturat);
+				 System.out.println("Total productes venuts: "+totalProductesVenuts);
+				 System.out.println("---------------------------------------");
+
+				 break;
+			 case 3:
+				 
+				 String producteMesVenut = "";
+				 int totalitatProducteMesVenut = 0;
+				 
+				 for(int i=0;i<Comandes.comandades.size();i++) {
+					 
+					 if(Comandes.comandades.get(i).quantitat > 0) {
+						 producteMesVenut = Producte.productes.get(i).nom;
+						 totalitatProducteMesVenut += Comandes.comandades.get(i).quantitat;
+					 }
+					 
+				 }
+				 System.out.println("--------------------------------");
+				 System.out.println("Producte mes venut: "+ producteMesVenut);
+				 System.out.println("Quantitat venuda del producte: "+totalitatProducteMesVenut);
+				 System.out.println("--------------------------------");
+
+				 
+				 break;
+			 case 4:
+				 
+				sortir=true;
+				 break;
+			 
+			 }
+		 }
 	}
 
 	private static void comandes() {
@@ -86,17 +155,26 @@ public class inventari {
 						System.out.println(" - Quantitat: "+Comandes.comandades.get(i).quantitat);
 						System.out.println(" - Total: "+Comandes.comandades.get(i).quantitat*Producte.productes.get(i).preu);
 						System.out.println("-----------------------------------------");
-					}
-						
-						
-						
+					}		
 				}
 				
 				
 				break;
 
 			case 3:
-
+				int totalisimo =0;
+				System.out.println("Introdueix numero DNI: ");
+				for(int i=0;i<Comandes.comandades.size();i++) {
+						System.out.println("** COMANDES: **");
+						System.out.println("-----------------------------------------");
+						System.out.println(" - Producte: "+Producte.productes.get(i).nom);
+						System.out.println(" - Quantitat: "+Comandes.comandades.get(i).quantitat);
+						System.out.println(" - Total: "+Comandes.comandades.get(i).quantitat*Producte.productes.get(i).preu);
+						System.out.println("-----------------------------------------");
+					totalisimo +=	Comandes.comandades.get(i).quantitat*Producte.productes.get(i).preu;
+				}
+				System.out.println("Import total de totes les comandes: "+totalisimo);
+				System.out.println("-----------------------------------------");
 				break;
 
 			case 4:
