@@ -12,6 +12,8 @@ public class inventari {
 		boolean sortir = false;
 		while (!sortir) {
 
+			// MENU PRINCIPAL
+
 			System.out.println("1.Productes: ");
 			System.out.println("2.Comandes: ");
 			System.out.println("3.Informes: ");
@@ -43,76 +45,86 @@ public class inventari {
 	}
 
 	private static void informes() {
-		// TODO Auto-generated method stub
+
+		// MENU SECUNDARI: - OPCIO NUMERO 3 DEL MENU PRINCIPAL
+		// 3.Informes:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 		boolean sortir = false;
-		 while(!sortir) {
-			 
-			 System.out.println("1. Mostra els productes sota minims: ");
-			 System.out.println("2. Mostra el total de vendes: ");
-			 System.out.println("3. Mostrar el producte més venut: ");
-			 System.out.println("4. Sortir al menu principal: ");
-			 
-			 
-			 int opcio = sc.nextInt();
-			 switch (opcio) {
-			 case 1:
-				 
-				 for(int i=0;i<Producte.productes.size();i++) {
-					 if(Producte.productes.get(i).stock <5) {
-						 System.out.println("--------------------------------------------");
-						 System.out.println("Producte sota minim: "+Producte.productes.get(i).nom);
-						 System.out.println("Quantitat: "+Producte.productes.get(i).stock);
-						 System.out.println("--------------------------------------------");
-					 }
-					 
-				 }
-				 
-				 break;
-				 
-			 case 2:
-				 int totalFacturat =0;
-				 int totalProductesVenuts =0;
-				 for(int i=0;i<Comandes.comandades.size();i++) {
-					 totalFacturat += Comandes.comandades.get(i).quantitat*Producte.productes.get(i).preu;
-					 totalProductesVenuts += Comandes.comandades.get(i).quantitat;
-				 }
-				 System.out.println("---------------------------------------");
-				 System.out.println("Total facturat en totes les comandes: "+totalFacturat);
-				 System.out.println("Total productes venuts: "+totalProductesVenuts);
-				 System.out.println("---------------------------------------");
+		while (!sortir) {
 
-				 break;
-			 case 3:
-				 
-				 String producteMesVenut = "";
-				 int totalitatProducteMesVenut = 0;
-				 
-				 for(int i=0;i<Comandes.comandades.size();i++) {
-					 
-					 if(Comandes.comandades.get(i).quantitat > 0) {
-						 producteMesVenut = Producte.productes.get(i).nom;
-						 totalitatProducteMesVenut += Comandes.comandades.get(i).quantitat;
-					 }
-					 
-				 }
-				 System.out.println("--------------------------------");
-				 System.out.println("Producte mes venut: "+ producteMesVenut);
-				 System.out.println("Quantitat venuda del producte: "+totalitatProducteMesVenut);
-				 System.out.println("--------------------------------");
+			System.out.println("1. Mostra els productes sota minims: ");
+			System.out.println("2. Mostra el total de vendes: ");
+			System.out.println("3. Mostrar el producte més venut: ");
+			System.out.println("4. Sortir al menu principal: ");
 
-				 
-				 break;
-			 case 4:
-				 
-				sortir=true;
-				 break;
-			 
-			 }
-		 }
+			int opcio = sc.nextInt();
+			switch (opcio) {
+			case 1:
+
+				// OPCIO 1. PRODUCTES SOTA MINIM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+				for (int i = 0; i < Producte.productes.size(); i++) {
+					if (Producte.productes.get(i).stock < 5) {
+						System.out.println("--------------------------------------------");
+						System.out.println("Producte sota minim: " + Producte.productes.get(i).nom);
+						System.out.println("Quantitat: " + Producte.productes.get(i).stock);
+						System.out.println("--------------------------------------------");
+					}
+
+				}
+
+				break;
+
+			// OPCIO 2. MOSTRAR EL TOTAL DE VENDES:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+			case 2:
+				int totalFacturat = 0;
+				int totalProductesVenuts = 0;
+				for (int i = 0; i < Comandes.comandades.size(); i++) {
+					totalFacturat += Comandes.comandades.get(i).quantitat * Producte.productes.get(i).preu;
+					totalProductesVenuts += Comandes.comandades.get(i).quantitat;
+				}
+				System.out.println("---------------------------------------");
+				System.out.println("Total facturat en totes les comandes: " + totalFacturat);
+				System.out.println("Total productes venuts: " + totalProductesVenuts);
+				System.out.println("---------------------------------------");
+
+				break;
+			case 3:
+
+				// OPCIO 3. MOSTRA EL PRODUCTE MES VENUT:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+				String producteMesVenut = "";
+				int totalitatProducteMesVenut = 0;
+
+				for (int i = 0; i < Comandes.comandades.size(); i++) {
+
+					if (Comandes.comandades.get(i).quantitat > 0) {
+						producteMesVenut = Producte.productes.get(i).nom;
+						totalitatProducteMesVenut += Comandes.comandades.get(i).quantitat;
+					}
+
+				}
+				System.out.println("--------------------------------");
+				System.out.println("Producte mes venut: " + producteMesVenut);
+				System.out.println("Quantitat venuda del producte: " + totalitatProducteMesVenut);
+				System.out.println("--------------------------------");
+
+				break;
+			case 4:
+				// OPCIO 4. SORTIR AL MENU PRINCIPAL:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+				sortir = true;
+				break;
+
+			}
+		}
 	}
 
 	private static void comandes() {
-		// TODO Auto-generated method stub
+
+		// MENU SECUNDARI OPCIO 2.COMANDES DEL MENU PRINCIPAL:
+		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 		boolean sortir = false;
 		while (!sortir) {
 
@@ -125,7 +137,10 @@ public class inventari {
 
 			switch (opcio) {
 			case 1:
-				
+
+				// OPCIO 1.CREAR UNA NOVA
+				// COMANDA:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 				Comandes c = new Comandes();
 
 				System.out.println("Insereix el numero de DNI: ");
@@ -141,43 +156,54 @@ public class inventari {
 				c.quantitat = quantitat;
 
 				Comandes.comandades.add(c);
-				
+
 				break;
 			case 2:
 
+				// OPCIO 2.VEURE COMANDES PER DNI
+				// CLIENT:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 				System.out.println("Introdueix numero DNI: ");
 				int dni1 = sc.nextInt();
-				for(int i=0;i<Comandes.comandades.size();i++) {
-					if(Comandes.comandades.get(i).dni==dni1) {
+				for (int i = 0; i < Comandes.comandades.size(); i++) {
+					if (Comandes.comandades.get(i).dni == dni1) {
 						System.out.println("** COMANDES: **");
 						System.out.println("-----------------------------------------");
-						System.out.println(" - Producte: "+Producte.productes.get(i).nom);
-						System.out.println(" - Quantitat: "+Comandes.comandades.get(i).quantitat);
-						System.out.println(" - Total: "+Comandes.comandades.get(i).quantitat*Producte.productes.get(i).preu);
+						System.out.println(" - Producte: " + Producte.productes.get(i).nom);
+						System.out.println(" - Quantitat: " + Comandes.comandades.get(i).quantitat);
+						System.out.println(
+								" - Total: " + Comandes.comandades.get(i).quantitat * Producte.productes.get(i).preu);
 						System.out.println("-----------------------------------------");
-					}		
+					}
 				}
-				
-				
+
 				break;
 
 			case 3:
-				int totalisimo =0;
+
+				// OPCIO 3.MOSTRAR TOTES LES COMANDES REGISTRADES AL INVENTARI:
+				// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+				int totalisimo = 0;
 				System.out.println("Introdueix numero DNI: ");
-				for(int i=0;i<Comandes.comandades.size();i++) {
-						System.out.println("** COMANDES: **");
-						System.out.println("-----------------------------------------");
-						System.out.println(" - Producte: "+Producte.productes.get(i).nom);
-						System.out.println(" - Quantitat: "+Comandes.comandades.get(i).quantitat);
-						System.out.println(" - Total: "+Comandes.comandades.get(i).quantitat*Producte.productes.get(i).preu);
-						System.out.println("-----------------------------------------");
-					totalisimo +=	Comandes.comandades.get(i).quantitat*Producte.productes.get(i).preu;
+				for (int i = 0; i < Comandes.comandades.size(); i++) {
+					System.out.println("** COMANDES: **");
+					System.out.println("-----------------------------------------");
+					System.out.println(" - Producte: " + Producte.productes.get(i).nom);
+					System.out.println(" - Quantitat: " + Comandes.comandades.get(i).quantitat);
+					System.out.println(
+							" - Total: " + Comandes.comandades.get(i).quantitat * Producte.productes.get(i).preu);
+					System.out.println("-----------------------------------------");
+					totalisimo += Comandes.comandades.get(i).quantitat * Producte.productes.get(i).preu;
 				}
-				System.out.println("Import total de totes les comandes: "+totalisimo);
+				System.out.println("Import total de totes les comandes: " + totalisimo);
 				System.out.println("-----------------------------------------");
 				break;
 
 			case 4:
+
+				// OPCIO 4.SORTIR AL MENU
+				// PRINCIPAL:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 				sortir = true;
 				break;
@@ -186,14 +212,14 @@ public class inventari {
 		}
 	}
 
-	
-		
-
 	private static void productes() {
 		// TODO Auto-generated method stub
 
 		boolean sortir = false;
 		while (!sortir) {
+
+			// MENU SECUNDARI PRODUCTES, OPCIO 1 DEL MENU PRINCIPAL:
+			// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 			System.out.println("1.Crear producte: ");
 			System.out.println("2.Mostrar productes registrats: ");
@@ -204,6 +230,9 @@ public class inventari {
 
 			switch (opcio) {
 			case 1:
+				
+				//OPCIO 1.CREAR PRODUCTES:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+				
 				Producte p = new Producte();
 
 				System.out.println("Introdueix el codi del producte: ");
@@ -224,6 +253,8 @@ public class inventari {
 				break;
 
 			case 2:
+				
+				//OPCIO 2.MODIFICAR ELS PRODUCTES JA REGISTRATS:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 				System.out.println("");
 				System.out.println("");
@@ -242,6 +273,9 @@ public class inventari {
 				break;
 
 			case 3:
+				
+				//OPCIO 3.MODIFICAR L'ESTOC DELS PRODUCTES REGISTRATS:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+				
 				System.out.println("Introdueix el codi del producte a modificar: ");
 				int c = sc.nextInt();
 
@@ -257,6 +291,8 @@ public class inventari {
 				}
 				break;
 
+				//OPCIO 4.SORTIR AL MENU PRINCIPAL:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+				
 			case 4:
 				sortir = true;
 				break;
