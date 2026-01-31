@@ -1,15 +1,23 @@
 package Inventari;
 
-import java.util.ArrayList;
+public class comandes {
 
-public class Comandes {
-	
-	static ArrayList<Comandes> comandades = new ArrayList<>();
-	public int dni;
-	public int codi;
-	public int quantitat;
-	public double preuTotal;
+	class Productes {
 
-	
+void constructor(name, age, alias){
+
+this.name = name
+thi.age = age
+this.alias = alias
+
+
+}
+
+
+
     }
+
+}
+
+
 
