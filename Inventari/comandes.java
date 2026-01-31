@@ -10,8 +10,8 @@ public class Comandes {
 
 	}
 
-	public static int codi;
-	public static int dni;
-	public static int quantitat;
+	public int codi;
+	public int dni;
+	public int quantitat;
 
 }
