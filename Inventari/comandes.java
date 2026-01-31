@@ -5,6 +5,7 @@ public class comandes {
 	class Productes {
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 void constructor(name, age, alias){
 
 this.name = name
@@ -14,6 +15,8 @@ this.alias = alias
 
 }
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
