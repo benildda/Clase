@@ -23,6 +23,7 @@ public class Metge {
     if(sou%6==0) {
     	this.sou = sou *100/5;
     }
+    
     //fixa't que el constructor no té retorn, ja que el que retorna és la pròpia classe
     public Metge() {
         this.nom = "Sense definir";
