@@ -23,7 +23,7 @@ public class Humano {
 		
 		organos.add(o);
 		System.out.println("La operacion ha salido bien");
-		
+		return true;
 	}
 	
 	
