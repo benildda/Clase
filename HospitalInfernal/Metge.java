@@ -1,6 +1,6 @@
 package HospitalInfernal;
 
-import java.util.ArrayList;
+
 
 public class Metge {
     //atributs del pacient
@@ -26,12 +26,29 @@ public class Metge {
     
     //fixa't que el constructor no té retorn, ja que el que retorna és la pròpia classe
     
+    public Metge (String nom, int anysTreballats, double sou) {
+    	this.nom = nom;
+    	this.anysTreballats = anysTreballats;
+    	this.sou = sou;
+    	this.departament = "sense departament";
+    	
+    }
+    
+    public Metge (String nom, int anysTreballats, double sou, String departament) {
+    	this.nom = nom;
+    	this.anysTreballats = anysTreballats;
+    	this.sou = sou;
+    	this.departament = departament;
+    	
+    }
     
     public Metge() {
         this.nom = "Sense definir";
         this.anysTreballats = 0;
         this.sou = 1000.0;
+       
     }
+    
     
     
     //podem crear múltiples constructors sempre que tinguin paràmetres diferents
@@ -56,6 +73,12 @@ public class Metge {
         }
     }
 
+    public void imprimirObjeto() {
+    	System.out.println(this.nom);
+    	System.out.println(this.sou);
+    	System.out.println(this.anysTreballats);
+    	System.out.println(this.departament);
+    }
     
 }
     

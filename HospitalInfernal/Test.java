@@ -9,14 +9,32 @@ public class Test {
 		// el new Metge () és el seu constructor
 
 		Metge marc = new Metge();
-		Metge montse = new Metge();
-
-		// podem accedir als seus atributs interns amb el punt
-
 		marc.nom = "Marc";
 		marc.sou = 1500;
+		marc.anysTreballats = 37;
+		marc.departament = "Director general";
+		
+		Metge montse = new Metge();
 		montse.nom = "Montserrat";
 		montse.sou = 200;
+		montse.anysTreballats = 15;
+		montse.departament = "manteniment";
+		
+		Metge faustino = new Metge();
+		faustino.nom = "Dr.Faustino";
+		faustino.sou = 1000;
+		faustino.anysTreballats = 10;
+		faustino.departament = "limpieza";
+		
+		Metge alberto = new Metge("alberto",30,1500,"DevOps");
+
+	
+		
+		// podem accedir als seus atributs interns amb el punt
+
+		
+		
+		
 
 		// també podem accedir als seus mètodes interns amb el punt
 
@@ -48,5 +66,25 @@ public class Test {
 
 		System.out.println("--------------------------------------");
 
+		faustino.diguesNom();
+		faustino.augmentarAnysTreballats();
+		faustino.augmentarAnysTreballats();
+		faustino.augmentarAnysTreballats();
+		faustino.augmentarAnysTreballats();
+		faustino.augmentarAnysTreballats();
+		faustino.augmentarAnysTreballats();
+		System.out.println(faustino.sou);
+		System.out.println("--------------------------------------");
+
+		faustino.imprimirObjeto();
+		System.out.println("--------------------------------------");
+
+		alberto.imprimirObjeto();
+		System.out.println("--------------------------------------");
+
+		montse.imprimirObjeto();
+		System.out.println("--------------------------------------");
+
+		marc.imprimirObjeto();
 	}
 }
