@@ -50,7 +50,15 @@ public class Metge {
         this.sou = 1000.0;
         this.categoria = Categoria.INTERN;
     }
-    
+    public Metge(String nom, Categoria categoria) {
+        //this.nom fa referència a la variable global i nom a la local que hem passat per paràmetre
+        this.nom = nom;
+        this.anysTreballats = 0;
+        this.sou = 1000.0;
+
+	  this.categoria = categoria;
+    }
+
     
     
     //podem crear múltiples constructors sempre que tinguin paràmetres diferents

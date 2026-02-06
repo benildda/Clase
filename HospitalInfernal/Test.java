@@ -86,5 +86,13 @@ public class Test {
 		System.out.println("--------------------------------------");
 
 		marc.imprimirObjeto();
+		System.out.println("--------------------------------------");
+
+		Metge pepo = new Metge("Pepo", Categoria.ESPECIALISTA);
+        System.out.println(pepo.nom+" "+pepo.sou);
+        if(pepo.categoria == Categoria.ESPECIALISTA) {
+            System.out.println("Pepo es un Especialista!");
+        }
+
 	}
 }
