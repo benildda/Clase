@@ -15,6 +15,7 @@ public class Test {
         
         
         marc.nom = "Marc";
+        marc.sou = 1500;
         montse.nom = "Montserrat";
         montse.sou = 200;
         
@@ -22,11 +23,14 @@ public class Test {
         //també podem accedir als seus mètodes interns amb el punt
         
         
-        marc.diguesNom();
+      
         montse.diguesNom();
-        System.out.println(montse.sou);
         montse.augmentarAnysTreballats();
         System.out.println(montse.sou);
+        
+        marc.diguesNom();
+        marc.augmentarAnysTreballats();
+         System.out.println(marc.sou);
 
     }
 }

@@ -19,9 +19,9 @@ public class Metge {
     
     public void augmentarAnysTreballats() {
     this.anysTreballats++;
-    this.sou = sou *100/2;
+    this.sou *= 1.02;
     if(sou%6==0) {
-    	this.sou = sou *100/5;
+    	this.sou *= 1.05;
     }}
     
     //fixa't que el constructor no té retorn, ja que el que retorna és la pròpia classe
