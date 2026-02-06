@@ -22,7 +22,11 @@ public class Metge {
     this.sou = sou *100/2;
     if(sou%6==0) {
     	this.sou = sou *100/5;
+<<<<<<< HEAD
     }}
+=======
+    }
+>>>>>>> e44c0c702cfdc7ca50e2f3dfaa6a45edc36f1b8a
     
     //fixa't que el constructor no té retorn, ja que el que retorna és la pròpia classe
     
