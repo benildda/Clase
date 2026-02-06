@@ -17,21 +17,30 @@ public class Metge {
     }
  
     
-    public void argumentarAnysTreballats() {
+    public void augmentarAnysTreballats() {
     this.anysTreballats++;
     this.sou = sou *100/2;
     if(sou%6==0) {
     	this.sou = sou *100/5;
-    }
+    }}
+    
     //fixa't que el constructor no té retorn, ja que el que retorna és la pròpia classe
+    
+    
     public Metge() {
         this.nom = "Sense definir";
         this.anysTreballats = 0;
         this.sou = 1000.0;
     }
+    
+    
     //podem crear múltiples constructors sempre que tinguin paràmetres diferents
+    
+    
     public Metge(String nom) {
+    	
         //this.nom fa referència a la variable global i nom a la local que hem passat per paràmetre
+    	
         this.nom = nom;
         this.anysTreballats = 0;
         this.sou = 1000.0;
@@ -45,7 +54,8 @@ public class Metge {
             //podem cridar a funcions de la nostra pròpia classe amb el this
             this.augmentarAnysTreballats();
         }
+    }
+
     
 }
     
-}
