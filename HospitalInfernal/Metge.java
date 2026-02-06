@@ -8,6 +8,8 @@ public class Metge {
     int anysTreballats;
     double sou;
     String departament;
+    Categoria categoria;
+  
 
 
     public void diguesNom() {
@@ -46,7 +48,7 @@ public class Metge {
         this.nom = "Sense definir";
         this.anysTreballats = 0;
         this.sou = 1000.0;
-       
+        this.categoria = Categoria.INTERN;
     }
     
     
